@@ -1,0 +1,28 @@
+var tid = setInterval(mycode, 2000);
+function mycode() {
+  // do some stuff...
+  // no need to recall the function (it's an interval, it'll loop forever)
+readTextFile("C:\Masters\Social_Computing_Fall_2018\git_repo\SC2018_Proj\DistributedGraphPartitioning\bin\output.txt");
+
+}
+function abortTimer() { // to be called when you want to stop the timer
+  clearInterval(tid);
+}
+
+function readTextFile(file)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                alert(allText);
+            }
+        }
+    }
+    rawFile.send(null);
+}

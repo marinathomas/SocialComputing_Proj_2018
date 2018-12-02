@@ -1,0 +1,8 @@
+demo/output
+/bin/
+demo/output/*.txt
+demo/output/*.json
+demo/output/*.out
+bin/output/*.txt
+*.DS_Store
+bin/*
